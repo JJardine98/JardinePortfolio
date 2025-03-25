@@ -626,3 +626,139 @@ section {
       max-width: 350px;
     }
   }
+
+.ocean .header {
+    background-color: var(--ocean-bg);
+}
+
+.sunset .header {
+    background-color: var(--sunset-bg);
+}
+
+.ocean .logo {
+    color: var(--ocean-primary);
+}
+
+.sunset .logo {
+    color: var(--sunset-primary);
+}
+
+.ocean .nav-links a::after {
+    background-color: var(--ocean-primary);
+}
+
+.sunset .nav-links a::after {
+    background-color: var(--sunset-primary);
+}
+
+.ocean .theme-selector select {
+    background-color: var(--ocean-bg);
+    border: 1px solid var(--ocean-accent);
+    color: var(--ocean-text);
+}
+
+.sunset .theme-selector select {
+    background-color: var(--sunset-bg);
+    border: 1px solid var(--sunset-accent);
+    color: var(--sunset-text);
+}
+
+.ocean .highlight {
+    color: var(--ocean-primary);
+}
+
+.sunset .highlight {
+    color: var(--sunset-primary);
+}
+
+.ocean .social-icon {
+    background-color: var(--ocean-primary);
+    color: white;
+}
+
+.sunset .social-icon {
+    background-color: var(--sunset-primary);
+    color: var(--sunset-bg);
+}
+
+.ocean .skills {
+    background-color: rgba(0, 102, 204, 0.05);
+}
+
+.sunset .skills {
+    background-color: rgba(255, 107, 107, 0.05);
+}
+
+.ocean .skill-category {
+    background-color: var(--ocean-bg);
+}
+
+.sunset .skill-category {
+    background-color: var(--sunset-accent);
+}
+
+.ocean .skill-category h3 {
+    color: var(--ocean-primary);
+}
+
+.sunset .skill-category h3 {
+    color: var(--sunset-primary);
+}
+
+.ocean .skill-category ul li::before {
+    color: var(--ocean-primary);
+}
+
+.sunset .skill-category ul li::before {
+    color: var(--sunset-primary);
+}
+
+.ocean .project-card {
+    background-color: var(--ocean-bg);
+}
+
+.sunset .project-card {
+    background-color: var(--sunset-accent);
+}
+
+.ocean .project-card h3 {
+    color: var(--ocean-primary);
+}
+
+.sunset .project-card h3 {
+    color: var(--sunset-primary);
+}
+
+.ocean .project-link {
+    background-color: var(--ocean-primary);
+    color: white;
+}
+
+.sunset .project-link {
+    background-color: var(--sunset-primary);
+    color: var(--sunset-bg);
+}
+
+.ocean .contact-item {
+    background-color: var(--ocean-bg);
+}
+
+.sunset .contact-item {
+    background-color: var(--sunset-accent);
+}
+
+.ocean .contact-item h3 {
+    color: var(--ocean-primary);
+}
+
+.sunset .contact-item h3 {
+    color: var(--sunset-primary);
+}
+
+.ocean .footer {
+    background-color: var(--ocean-accent);
+}
+
+.sunset .footer {
+    background-color: var(--sunset-accent);
+}
