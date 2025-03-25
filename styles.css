@@ -368,8 +368,15 @@ section {
   }
   
   .skill-category h3 {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .skill-category h3 i {
+    font-size: 1.2rem;
   }
   
   .light .skill-category h3 {
@@ -385,28 +392,78 @@ section {
   }
   
   .skill-category ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     position: relative;
-    padding-left: 1.5rem;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
   
-  .skill-category ul li::before {
-    content: '▹';
-    position: absolute;
-    left: 0;
-    font-size: 1rem;
+  .skill-name {
+    font-weight: 500;
+    display: block;
   }
   
-  .light .skill-category ul li::before {
-    color: var(--crimson);
+  .skill-level {
+    width: 100%;
+    height: 8px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
   }
   
-  .dark .skill-category ul li::before {
-    color: var(--dark-primary);
+  .dark .skill-level {
+    background-color: rgba(255, 255, 255, 0.1);
   }
   
-  .forest .skill-category ul li::before {
-    color: var(--forest-primary);
+  .forest .skill-level {
+    background-color: rgba(46, 125, 50, 0.1);
+  }
+  
+  .ocean .skill-level {
+    background-color: rgba(0, 102, 204, 0.1);
+  }
+  
+  .sunset .skill-level {
+    background-color: rgba(255, 215, 0, 0.1);
+  }
+  
+  .progress-bar {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 1s ease-in-out;
+  }
+  
+  .light .progress-bar {
+    background-color: var(--light-primary);
+  }
+  
+  .dark .progress-bar {
+    background-color: var(--dark-primary);
+  }
+  
+  .forest .progress-bar {
+    background-color: var(--forest-primary);
+  }
+  
+  .ocean .progress-bar {
+    background-color: var(--ocean-primary);
+  }
+  
+  .sunset .progress-bar {
+    background-color: var(--sunset-primary);
+  }
+  
+  /* Add animation for skill bars */
+  @keyframes fillBar {
+    from {
+        width: 0;
+    }
+  }
+  
+  .skill-category:hover .progress-bar {
+    animation: fillBar 1s ease-in-out forwards;
   }
   
   /* Projects Section */
@@ -624,6 +681,18 @@ section {
     .contact-item {
       width: 100%;
       max-width: 350px;
+    }
+  
+    .skill-category h3 {
+        font-size: 1.2rem;
+    }
+    
+    .skill-category h3 i {
+        font-size: 1.1rem;
+    }
+    
+    .skill-level {
+        height: 6px;
     }
   }
 
