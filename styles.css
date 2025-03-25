@@ -87,7 +87,7 @@ a {
 }
   
 .dark a {
-    color: #ff6b81;
+    color: var(--dark-primary);
 }
   
 .forest a {
@@ -153,7 +153,7 @@ section {
   }
   
   .dark .logo {
-    color: #ff6b81;
+    color: var(--dark-primary);
   }
   
   .forest .logo {
@@ -185,7 +185,7 @@ section {
   }
   
   .dark .nav-links a::after {
-    background-color: #ff6b81;
+    background-color: var(--dark-primary);
   }
   
   .forest .nav-links a::after {
@@ -270,7 +270,7 @@ section {
   }
   
   .dark .highlight {
-    color: #ff6b81;
+    color: var(--dark-primary);
   }
   
   .forest .highlight {
@@ -306,7 +306,7 @@ section {
   }
   
   .dark .social-icon {
-    background-color: #ff6b81;
+    background-color: var(--dark-primary);
     color: var(--dark-bg);
   }
   
@@ -377,7 +377,7 @@ section {
   }
   
   .dark .skill-category h3 {
-    color: #ff6b81;
+    color: var(--dark-primary);
   }
   
   .forest .skill-category h3 {
@@ -402,7 +402,7 @@ section {
   }
   
   .dark .skill-category ul li::before {
-    color: #ff6b81;
+    color: var(--dark-primary);
   }
   
   .forest .skill-category ul li::before {
@@ -458,7 +458,7 @@ section {
   }
   
   .dark .project-card h3 {
-    color: #ff6b81;
+    color: var(--dark-primary);
   }
   
   .forest .project-card h3 {
@@ -485,7 +485,7 @@ section {
   }
   
   .dark .project-link {
-    background-color: #ff6b81;
+    background-color: var(--dark-primary);
     color: var(--dark-bg);
   }
   
@@ -556,7 +556,7 @@ section {
   }
   
   .dark .contact-item h3 {
-    color: #ff6b81;
+    color: var(--dark-primary);
   }
   
   .forest .contact-item h3 {
