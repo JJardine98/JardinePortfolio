@@ -1,85 +1,121 @@
 /* Base styles */
 :root {
-    --crimson: #5e0315;
-    --crimson-dark: #b10729;
+    /* Light theme (updated) */
+    --light-bg: #ffffff;
+    --light-text: #2c3e50;
+    --light-accent: #f8f9fa;
+    --light-primary: #3498db;
+    
+    /* Dark theme */
     --dark-bg: #1a1a1a;
     --dark-text: #f5f5f5;
-    --light-bg: #e7e7e7;
-    --light-text: #333333;
-    --light-accent: #cecece;
     --dark-accent: #2c2c2c;
+    --dark-primary: #ff6b81;
+    
+    /* Forest theme */
     --forest-bg: #f0f7f4;
     --forest-text: #2c3e50;
     --forest-accent: #c8e6c9;
     --forest-primary: #2e7d32;
+    
+    /* Sunset theme */
+    --sunset-bg: #2c1810;
+    --sunset-text: #ffd700;
+    --sunset-accent: #4a2f1f;
+    --sunset-primary: #ff6b6b;
+    
+    /* Ocean theme */
+    --ocean-bg: #e6f3ff;
+    --ocean-text: #1a4b84;
+    --ocean-accent: #b3d9ff;
+    --ocean-primary: #0066cc;
+    
     --transition: all 0.3s ease;
-  }
+}
   
-  * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
   
-  body {
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     scroll-behavior: smooth;
-  }
+}
   
-  body.light {
+body.light {
     background-color: var(--light-bg);
     color: var(--light-text);
-  }
+}
   
-  body.dark {
+body.dark {
     background-color: var(--dark-bg);
     color: var(--dark-text);
-  }
+}
   
-  body.forest {
+body.forest {
     background-color: var(--forest-bg);
     color: var(--forest-text);
-  }
+}
   
-  .container {
+body.ocean {
+    background-color: var(--ocean-bg);
+    color: var(--ocean-text);
+}
+  
+body.sunset {
+    background-color: var(--sunset-bg);
+    color: var(--sunset-text);
+}
+  
+.container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
-  }
+}
   
-  a {
+a {
     text-decoration: none;
     transition: var(--transition);
-  }
+}
   
-  .light a {
-    color: var(--crimson);
-  }
+.light a {
+    color: var(--light-primary);
+}
   
-  .dark a {
+.dark a {
     color: #ff6b81;
-  }
+}
   
-  .forest a {
+.forest a {
     color: var(--forest-primary);
-  }
+}
   
-  a:hover {
+.ocean a {
+    color: var(--ocean-primary);
+}
+  
+.sunset a {
+    color: var(--sunset-primary);
+}
+  
+a:hover {
     opacity: 0.8;
-  }
+}
   
-  ul {
+ul {
     list-style-type: none;
-  }
+}
   
-  section {
+section {
     padding: 5rem 0;
-  }
+}
   
-  /* Header */
-  .header {
+/* Header */
+.header {
     position: fixed;
     top: 0;
     left: 0;
