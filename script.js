@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set current year in footer
     currentYearSpan.textContent = new Date().getFullYear();
     
-    // Check for saved theme preference
+    // Check for saved theme preference or default to light
     const savedTheme = localStorage.getItem('theme') || 'light';
     
     // Apply saved theme
