@@ -2557,6 +2557,7 @@ main {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 2rem;
     }
+
 }
 
 /* Custom size for quote generator showcase */
