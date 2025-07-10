@@ -7,6 +7,157 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Slideshow styles */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+            padding: 0 50px; /* Add padding for arrows */
+        }
+
+        .slide {
+            display: none;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            background-color: var(--bg-color);
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 40px;
+            margin-top: -20px;
+            color: var(--text-color);
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 50%;
+            user-select: none;
+            background-color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .prev {
+            left: -5px;
+        }
+
+        .next {
+            right: -5px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: var(--hover-color);
+        }
+
+        .slide-number {
+            color: var(--text-color);
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: var(--accent-color);
+            border-radius: 5px;
+        }
+
+        .social-media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-media-item {
+            background: var(--bg-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+        }
+
+        .social-media-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px var(--shadow-color);
+        }
+
+        .social-media-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .social-media-info {
+            padding: 1rem;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .social-media-info h4 {
+            color: var(--heading-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+            border: 2px solid var(--border-color);
+            background-color: var(--bg-color);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: var(--text-color);
+            font-size: 30px;
+            cursor: pointer;
+            background: var(--accent-color);
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            background-color: var(--hover-color);
+        }
+    </style>
 </head>
 <body class="light">
     <!-- Header -->
@@ -39,123 +190,286 @@
         <section class="design-categories">
             <div class="container">
                 <h2>Graphic Design Portfolio</h2>
-                <p class="section-intro">A collection of marketing materials, social media content, and brand identity work showcasing creative solutions for various clients and projects.</p>
                 
-                <!-- Social Media Category -->
+                
+                <!-- BGC Greater Saint John Social Media Posts -->
                 <div class="design-category">
-                    <h3>Social Media Design</h3>
-                    <div class="design-grid">
-                        <div class="design-item">
-                            <div class="design-preview">
-                                <!-- Add actual image path -->
-                                <img src="designs/social/preview1.jpg" alt="Social Media Campaign Design">
-                            </div>
-                            <div class="design-info">
-                                <h4>Campaign Series</h4>
-                                <p>Instagram story series for product launches and promotions</p>
+                    <h3>BGC Greater Saint John - Social Media Mock Posts</h3>
+                    <div class="social-media-grid">
+                        <div class="social-media-item" onclick="openLightbox('portfolio/graphicdesign/50 (1).png')">
+                            <img src="portfolio/graphicdesign/50 (1).png" alt="BGC Social Media Post 1">
+                            <div class="social-media-info">
+                                <h4>Campaign Post 1</h4>
+                                <p>Social media design for BGC Greater Saint John</p>
                             </div>
                         </div>
-                        <!-- Add more social media design items -->
+                        <div class="social-media-item" onclick="openLightbox('portfolio/graphicdesign/CLUB 100 (2).png')">
+                            <img src="portfolio/graphicdesign/CLUB 100 (2).png" alt="BGC Social Media Post 2">
+                            <div class="social-media-info">
+                                <h4>Campaign Post 2</h4>
+                                <p>Club 100 promotion for BGC Greater Saint John</p>
+                            </div>
+                        </div>
+                        <div class="social-media-item" onclick="openLightbox('portfolio/graphicdesign/Fly or Dine.png')">
+                            <img src="portfolio/graphicdesign/Fly or Dine.png" alt="BGC Social Media Post 3">
+                            <div class="social-media-info">
+                                <h4>Campaign Post 3</h4>
+                                <p>Fly or Dine campaign for BGC Greater Saint John</p>
+                            </div>
+                        </div>
+                        <div class="social-media-item" onclick="openLightbox('portfolio/graphicdesign/Throwback Thursdays.png')">
+                            <img src="portfolio/graphicdesign/Throwback Thursdays.png" alt="BGC Throwback Thursdays">
+                            <div class="social-media-info">
+                                <h4>Throwback Thursdays</h4>
+                                <p>Nostalgic social media campaign highlighting BGC history</p>
+                            </div>
+                        </div>
+                        <div class="social-media-item" onclick="openLightbox('portfolio/graphicdesign/year 25-26.png')">
+                            <img src="portfolio/graphicdesign/year 25-26.png" alt="BGC Year 25-26">
+                            <div class="social-media-info">
+                                <h4>Annual Campaign</h4>
+                                <p>2025-2026 year promotional campaign design</p>
+                            </div>
+                        </div>
+                        <div class="social-media-item" onclick="openLightbox('portfolio/graphicdesign/Blue and White Simple Minimalist Food Drive Poster.png')">
+                            <img src="portfolio/graphicdesign/Blue and White Simple Minimalist Food Drive Poster.png" alt="BGC Food Drive Poster">
+                            <div class="social-media-info">
+                                <h4>Food Drive Campaign</h4>
+                                <p>Minimalist design promoting BGC's community food drive initiative</p>
+                            </div>
+                        </div>
+                        <div class="social-media-item" onclick="openLightbox('portfolio/graphicdesign/Blue and Red Ilustrated Travel Checklist.png')">
+                            <img src="portfolio/graphicdesign/Blue and Red Ilustrated Travel Checklist.png" alt="BGC Travel Checklist">
+                            <div class="social-media-info">
+                                <h4>Donations</h4>
+                                <p>Donation campaign for BGC Greater Saint John</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Marketing Materials -->
+                <!-- JJWS Social Media Posts -->
                 <div class="design-category">
-                    <h3>Marketing Materials</h3>
-                    <div class="design-grid">
-                        <div class="design-item">
-                            <div class="design-preview">
-                                <!-- Add actual image path -->
-                                <img src="designs/marketing/preview1.jpg" alt="Marketing Material Design">
-                            </div>
-                            <div class="design-info">
-                                <h4>Print & Digital</h4>
-                                <p>Brochures, flyers, and digital marketing assets</p>
+                    <h3>JJ Web Solutions - Brand & Social Media</h3>
+                    <div class="social-media-grid">
+                        <div class="social-media-item" onclick="openLightbox('portfolio/graphicdesign/JJWS-Ad.png')">
+                            <img src="portfolio/graphicdesign/JJWS-Ad.png" alt="JJWS Advertisement">
+                            <div class="social-media-info">
+                                <h4>JJWS Advertisement</h4>
+                                <p>Promotional advertisement for web development services</p>
                             </div>
                         </div>
-                        <!-- Add more marketing material items -->
+                        <div class="social-media-item" onclick="openLightbox('portfolio/graphicdesign/jjws-game.jpg')">
+                            <img src="portfolio/graphicdesign/jjws-game.jpg" alt="JJWS Game Post">
+                            <div class="social-media-info">
+                                <h4>Interactive Content</h4>
+                                <p>Engaging social media game post for audience interaction</p>
+                            </div>
+                        </div>
+                        <div class="social-media-item" onclick="openLightbox('portfolio/graphicdesign/jjws-banner.png')">
+                            <img src="portfolio/graphicdesign/jjws-banner.png" alt="JJWS Banner">
+                            <div class="social-media-info">
+                                <h4>Brand Banner</h4>
+                                <p>Professional banner design for web presence</p>
+                            </div>
+                        </div>
+                        <div class="social-media-item" onclick="openLightbox('portfolio/graphicdesign/jjwslogo2.jpg')">
+                            <img src="portfolio/graphicdesign/jjwslogo2.jpg" alt="JJWS Logo Design">
+                            <div class="social-media-info">
+                                <h4>Logo Design</h4>
+                                <p>Modern and professional logo design</p>
+                            </div>
+                        </div>
+                        <div class="social-media-item" onclick="openLightbox('portfolio/graphicdesign/JJSLogo.png')">
+                            <img src="portfolio/graphicdesign/JJSLogo.png" alt="JJWS Brand Logo">
+                            <div class="social-media-info">
+                                <h4>Brand Identity</h4>
+                                <p>Primary logo design for JJ Web Solutions</p>
+                            </div>
+                        </div>
+                        <div class="social-media-item" onclick="openLightbox('portfolio/graphicdesign/facebook-post-canada-day.png')">
+                            <img src="portfolio/graphicdesign/facebook-post-canada-day.png" alt="JJWS Canada Day Post">
+                            <div class="social-media-info">
+                                <h4>Holiday Special</h4>
+                                <p>Canada Day celebration post for JJWS</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Brand Identity -->
+                <!-- Saint John Directory Social Media Posts -->
                 <div class="design-category">
-                    <h3>Brand Identity</h3>
-                    <div class="design-grid">
-                        <div class="design-item">
-                            <div class="design-preview">
-                                <!-- Add actual image path -->
-                                <img src="designs/branding/preview1.jpg" alt="Brand Identity Design">
-                            </div>
-                            <div class="design-info">
-                                <h4>Logo & Brand Guidelines</h4>
-                                <p>Complete brand identity packages including logos, color schemes, and typography</p>
+                    <h3>The Saint John Directory - Social Media Content</h3>
+                    <div class="social-media-grid">
+                        <div class="social-media-item" onclick="openLightbox('portfolio/graphicdesign/SJOD-Post.png')">
+                            <img src="portfolio/graphicdesign/SJOD-Post.png" alt="SJOD Social Post">
+                            <div class="social-media-info">
+                                <h4>Directory Promotion</h4>
+                                <p>Promotional content for The Saint John Directory</p>
                             </div>
                         </div>
-                        <!-- Add more brand identity items -->
+                    </div>
+                </div>
+
+                <!-- Business Card Designs -->
+                <div class="design-category">
+                    <h3>Business Card Designs</h3>
+                    <div class="social-media-grid">
+                        <div class="social-media-item" onclick="openLightbox('portfolio/graphicdesign/jardinebusiness1.png')">
+                            <img src="portfolio/graphicdesign/jardinebusiness1.png" alt="Business Card Front View">
+                            <div class="social-media-info">
+                                <h4>Business Card - Front</h4>
+                                <p>Professional business card design showcasing brand identity</p>
+                            </div>
+                        </div>
+                        <div class="social-media-item" onclick="openLightbox('portfolio/graphicdesign/jardinebusiness2.png')">
+                            <img src="portfolio/graphicdesign/jardinebusiness2.png" alt="Business Card Back View">
+                            <div class="social-media-info">
+                                <h4>Business Card - Back</h4>
+                                <p>Contact information and brand elements layout</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BGC Greater Saint John Presentation Slideshow -->
+                <div class="design-category">
+                    <h3>BGC Greater Saint John - Business Presentation</h3>
+                    <div class="slideshow-container">
+                        <!-- Slides will be dynamically populated -->
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Design Process -->
-        <section class="design-process">
-            <div class="container">
-                <h3>Design Process</h3>
-                <div class="process-steps">
-                    <div class="process-step">
-                        <i class="fas fa-lightbulb"></i>
-                        <h4>Research & Concept</h4>
-                        <p>Understanding brand values and target audience to create effective design solutions</p>
-                    </div>
-                    <div class="process-step">
-                        <i class="fas fa-pencil-alt"></i>
-                        <h4>Design & Iteration</h4>
-                        <p>Creating multiple concepts and refining based on feedback and objectives</p>
-                    </div>
-                    <div class="process-step">
-                        <i class="fas fa-check-circle"></i>
-                        <h4>Delivery & Support</h4>
-                        <p>Providing final assets in all necessary formats with usage guidelines</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
 
         <!-- Tools & Skills -->
         <section class="design-tools">
             <div class="container">
-                <h3>Tools & Expertise</h3>
+                <h3>Design Tools & Technical Proficiency</h3>
                 <div class="tools-grid">
                     <div class="tool-item">
-                        <i class="fab fa-adobe"></i>
-                        <span>Adobe Creative Suite</span>
+                        <i class="fas fa-pen-nib"></i>
+                        <span>Canva Pro</span>
                     </div>
                     <div class="tool-item">
-                        <i class="fas fa-palette"></i>
-                        <span>Color Theory</span>
+                        <i class="fas fa-layer-group"></i>
+                        <span>UI/UX Design</span>
                     </div>
                     <div class="tool-item">
-                        <i class="fas fa-font"></i>
-                        <span>Typography</span>
-                    </div>
-                    <div class="tool-item">
-                        <i class="fas fa-vector-square"></i>
-                        <span>Vector Design</span>
+                        <i class="fas fa-swatchbook"></i>
+                        <span>Brand Development</span>
                     </div>
                     <div class="tool-item">
                         <i class="fas fa-mobile-alt"></i>
                         <span>Responsive Design</span>
                     </div>
                     <div class="tool-item">
-                        <i class="fas fa-image"></i>
-                        <span>Image Editing</span>
+                        <i class="fas fa-bullhorn"></i>
+                        <span>Social Media Design</span>
+                    </div>
+                    <div class="tool-item">
+                        <i class="fas fa-photo-video"></i>
+                        <span>Digital Marketing</span>
+                    </div>
+                    <div class="tool-item">
+                        <i class="fas fa-palette"></i>
+                        <span>Color Theory</span>
+                    </div>
+                    <div class="tool-item">
+                        <i class="fas fa-text-height"></i>
+                        <span>Typography</span>
+                    </div>
+                    <div class="tool-item">
+                        <i class="fas fa-crop"></i>
+                        <span>Layout Design</span>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- JavaScript -->
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <img id="lightbox-img" src="" alt="Lightbox Image">
+    </div>
+
+    <!-- JavaScript for Slideshow -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slideshowContainer = document.querySelector('.slideshow-container');
+            
+            // Create slides
+            for(let i = 1; i <= 10; i++) {
+                const slide = document.createElement('div');
+                slide.className = 'slide';
+                slide.innerHTML = `
+                    <img src="portfolio/graphicdesign/presentation/${i}.png" alt="Presentation Slide ${i}">
+                    <div class="slide-number">${i} / 10</div>
+                `;
+                slideshowContainer.appendChild(slide);
+            }
+
+            // Add navigation buttons
+            const prevButton = document.createElement('a');
+            prevButton.className = 'prev';
+            prevButton.innerHTML = '&#10094;';
+            prevButton.onclick = () => changeSlide(-1);
+
+            const nextButton = document.createElement('a');
+            nextButton.className = 'next';
+            nextButton.innerHTML = '&#10095;';
+            nextButton.onclick = () => changeSlide(1);
+
+            slideshowContainer.appendChild(prevButton);
+            slideshowContainer.appendChild(nextButton);
+
+            // Show first slide
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            // Navigation functions
+            window.changeSlide = function(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function showSlides(n) {
+                const slides = document.getElementsByClassName("slide");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                
+                slides[slideIndex-1].style.display = "block";
+            }
+        });
+
+        // Lightbox functions
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = imageSrc;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+        }
+
+        // Close lightbox when clicking outside the image
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+    </script>
+
+    <!-- Theme JavaScript -->
     <script src="script.js"></script>
 </body>
 </html> 
